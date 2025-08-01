@@ -1,0 +1,184 @@
+/* navbar.css */
+:root {
+  --primary-color: #1e90ff;
+  --secondary-color: #000; /* black background */
+  --text-color: #ffffff;
+  --hover-bg: #1a1a1a;
+  --accent-color: #ffb400;
+  --danger-color: #ff4d4d;
+}
+
+.navbar {
+  background-color: var(--secondary-color);
+  padding: 0.75rem 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.brand {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.brand-icon {
+  font-size: 2rem;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  color: var(--text-color);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: var(--hover-bg);
+}
+
+.nav-link.active {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.nav-icon {
+  font-size: 1.2rem;
+}
+
+.nav-text {
+  font-size: 1rem;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.login-btn,
+.logout-btn {
+  background-color: var(--primary-color);
+  border: none;
+  padding: 0.6rem 1.4rem;
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.login-btn:hover,
+.logout-btn:hover {
+  background-color: #0073e6;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.login-btn:active,
+.logout-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.profile-image {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent-color);
+}
+
+.profile-placeholder {
+  width: 36px;
+  height: 36px;
+  background-color: var(--accent-color);
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border-radius: 50%;
+  font-size: 1rem;
+}
+
+.username-display {
+  color: #222; /* Dark gray for high contrast on white */
+  font-size: 1rem;
+  font-weight: 600;
+}
+.username-display:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .navbar-left, .navbar-right {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-link {
+    width: 100%;
+  }
+
+  .login-btn,
+  .logout-btn {
+    width: 100%;
+  }
+}

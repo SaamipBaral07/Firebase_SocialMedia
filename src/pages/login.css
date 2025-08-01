@@ -1,0 +1,221 @@
+/* Login Page Styles */
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  padding: 20px;
+}
+
+.login-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  padding: 48px;
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+
+.login-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Logo/Brand Section */
+.login-brand {
+  margin-bottom: 32px;
+}
+
+.login-brand h1 {
+  color: #2c3e50;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.login-brand p {
+  color: #6c757d;
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Welcome Message */
+.login-message {
+  margin-bottom: 32px;
+}
+
+.login-message h2 {
+  color: #2c3e50;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+}
+
+.login-message p {
+  color: #6c757d;
+  font-size: 1rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Google Sign-in Button */
+.google-signin-btn {
+  background: white;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  padding: 16px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.google-signin-btn:hover {
+  border-color: #4285f4;
+  background-color: #f8f9ff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(66, 133, 244, 0.15);
+}
+
+.google-signin-btn:active {
+  transform: translateY(0);
+}
+
+/* Google Logo */
+.google-logo {
+  width: 20px;
+  height: 20px;
+  background-image: url("data:image/svg+xml,%3csvg width='18' height='18' xmlns='http://www.w3.org/2000/svg'%3e%3cg fill='none' fill-rule='evenodd'%3e%3cpath d='M17.6 9.2l-.1-1.8H9v3.4h4.8C13.6 12 13 13 12 13.6v2.2h3A8.8 8.8 0 0 0 17.6 9.2z' fill='%234285F4'/%3e%3cpath d='M9 18c2.4 0 4.5-.8 6-2.2l-3-2.2a5.4 5.4 0 0 1-8-2.9H1V13a9 9 0 0 0 8 5z' fill='%2334A853'/%3e%3cpath d='M4 10.7a5.4 5.4 0 0 1 0-3.4V5H1a9 9 0 0 0 0 8l3-2.3z' fill='%23FBBC04'/%3e%3cpath d='M9 3.6c1.3 0 2.5.4 3.4 1.3L15 2.3A9 9 0 0 0 1 5l3 2.4a5.4 5.4 0 0 1 5-3.7z' fill='%23EA4335'/%3e%3c/g%3e%3c/svg%3e");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Loading State */
+.google-signin-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.google-signin-btn.loading {
+  color: transparent;
+}
+
+.google-signin-btn.loading::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #e9ecef;
+  border-top: 2px solid #4285f4;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Footer */
+.login-footer {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #e9ecef;
+}
+
+.login-footer p {
+  color: #6c757d;
+  font-size: 0.875rem;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.login-footer a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Error Message */
+.error-message {
+  background-color: #fee;
+  border: 1px solid #fcc;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 20px;
+  color: #c33;
+  font-size: 0.9rem;
+}
+
+/* Success Message */
+.success-message {
+  background-color: #efe;
+  border: 1px solid #cfc;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 20px;
+  color: #3c3;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 10px;
+  }
+  
+  .login-card {
+    padding: 32px 24px;
+  }
+  
+  .login-brand h1 {
+    font-size: 2rem;
+  }
+  
+  .login-message h2 {
+    font-size: 1.25rem;
+  }
+  
+  .google-signin-btn {
+    padding: 14px 20px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Accessibility */
+.google-signin-btn:focus {
+  outline: 2px solid #4285f4;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .login-card,
+  .google-signin-btn,
+  .google-signin-btn::after {
+    transition: none;
+    animation: none;
+  }
+}
